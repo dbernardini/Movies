@@ -92,12 +92,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             startActivity(intent);
             return true;
         }
-        else if (id == R.id.action_beacon) {
-            Intent intent = new Intent(this, MonitoringActivity.class);
-            startActivity(intent);
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -114,7 +108,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     public boolean onQueryTextChange(String newText) {
         return false;
     }
-
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());

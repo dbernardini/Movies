@@ -1,37 +1,24 @@
-package com.bernardini.danilo.movies.activities;
+package com.bernardini.danilo.movies.beacon;
 
 import android.Manifest;
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.RemoteException;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 import com.bernardini.danilo.movies.R;
 
-import org.altbeacon.beacon.BeaconConsumer;
 import org.altbeacon.beacon.BeaconManager;
-import org.altbeacon.beacon.BeaconParser;
-import org.altbeacon.beacon.MonitorNotifier;
-import org.altbeacon.beacon.Region;
 
-/**
- *
- * @author dyoung
- * @author Matt Tyler
- */
 public class MonitoringActivity extends Activity  {
-    protected static final String TAG = "MonitoringActivity";
+    protected static final String TAG = "BeaconMonitoring";
     private static final int PERMISSION_REQUEST_COARSE_LOCATION = 1;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +52,11 @@ public class MonitoringActivity extends Activity  {
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
             case PERMISSION_REQUEST_COARSE_LOCATION: {
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Log.d(TAG, "coarse location permission granted");
+                    Log.d(TAG, "Coarse location permission granted");
                 } else {
                     final AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setTitle("Functionality limited");

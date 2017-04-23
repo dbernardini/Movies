@@ -1,4 +1,4 @@
-package com.bernardini.danilo.movies.activities;
+package com.bernardini.danilo.movies.beacon;
 
 import android.annotation.TargetApi;
 import android.app.Application;
@@ -12,9 +12,10 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.bernardini.danilo.movies.R;
+import com.bernardini.danilo.movies.activities.ShowtimesActivity;
 
 import org.altbeacon.beacon.BeaconManager;
-import org.altbeacon.beacon.BeaconParser;
+import org.altbeacon.beacon.Identifier;
 import org.altbeacon.beacon.Region;
 import org.altbeacon.beacon.powersave.BackgroundPowerSaver;
 import org.altbeacon.beacon.startup.RegionBootstrap;
@@ -50,6 +51,7 @@ public class BeaconReferenceApplication extends Application implements Bootstrap
         // wake up the app when a beacon is seen
         Region region = new Region("backgroundRegion",
                 null, null, null);
+//        Identifier.parse("00000000-0000-0000-0000-000000000000"), null, null);
         regionBootstrap = new RegionBootstrap(this, region);
 
         // simply constructing this class and holding a reference to it in your custom Application
@@ -70,14 +72,14 @@ public class BeaconReferenceApplication extends Application implements Bootstrap
         if (!haveDetectedBeaconsSinceBoot) {
             Log.d(TAG, "auto launching MainActivity");
 
-            // The very first time since boot that we detect an beacon, we launch the
-            // MainActivity
-            Intent intent = new Intent(this, MonitoringActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            // The very first time since boot that we detect an beacon, we launch the MonitoringActivity
+//            Intent intent = new Intent(this, MonitoringActivity.class);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             // Important:  make sure to add android:launchMode="singleInstance" in the manifest
             // to keep multiple copies of this activity from getting created if the user has
             // already manually launched the app.
-            this.startActivity(intent);
+//            this.startActivity(intent);
+            sendNotification();
             haveDetectedBeaconsSinceBoot = true;
         } else {
             if (monitoringActivity != null) {
@@ -113,18 +115,19 @@ public class BeaconReferenceApplication extends Application implements Bootstrap
     private void sendNotification() {
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this)
-                        .setContentTitle("Beacon Reference Application")
-                        .setContentText("An beacon is nearby.")
-                        .setSmallIcon(R.drawable.icon);
+                        .setContentTitle("Movies beacon nearby!")
+                        .setContentText("Click to discover movies showtime")
+                        .setSmallIcon(R.drawable.ic_stat);
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
-        stackBuilder.addNextIntent(new Intent(this, MonitoringActivity.class));
+        stackBuilder.addNextIntent(new Intent(this, ShowtimesActivity.class));
         PendingIntent resultPendingIntent =
                 stackBuilder.getPendingIntent(
                         0,
                         PendingIntent.FLAG_UPDATE_CURRENT
                 );
         builder.setContentIntent(resultPendingIntent);
+        builder.setAutoCancel(true);
         NotificationManager notificationManager =
                 (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(1, builder.build());
