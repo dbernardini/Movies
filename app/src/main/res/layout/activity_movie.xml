@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".activities.MovieActivity">
+
+            <ImageView
+                android:id="@+id/movie_poster"
+                android:layout_width="120dp"
+                android:layout_height="180dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="10dp"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/movie_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/movie_poster"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/movie_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/movie_poster"
+                android:layout_below="@+id/movie_title"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/movie_length"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/movie_poster"
+                android:layout_below="@+id/movie_year"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/movie_director"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/movie_poster"
+                android:layout_below="@+id/movie_length"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/movie_genres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/movie_poster"
+                android:layout_below="@+id/movie_director"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/movie_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/movie_poster"
+                android:layout_below="@+id/movie_genres"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="10dp"
+                android:textSize="14sp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".activities.MovieActivity">
+
+            <CheckBox
+                android:id="@+id/seen_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimary"
+                android:visibility="invisible"
+                android:textSize="14sp"
+                android:text="Visto"/>
+
+            <CheckBox
+                android:id="@+id/wish_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/seen_checkbox"
+                android:visibility="invisible"
+                android:buttonTint="@color/colorPrimary"
+                android:textSize="14sp"
+                android:text="Da vedere"/>
+
+            <CheckBox
+                android:id="@+id/own_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible"
+                android:buttonTint="@color/colorPrimary"
+                android:textSize="14sp"
+                android:text="Acquistato"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".activities.MovieActivity">
+
+            <TextView
+                android:id="@+id/movie_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:ellipsize="end"
+                android:textColor="#DE000000"
+                android:scrollbars="vertical" />
+
+            <TextView
+                android:id="@+id/movie_cast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/movie_overview"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/cast_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/show_all_cast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+</ScrollView>

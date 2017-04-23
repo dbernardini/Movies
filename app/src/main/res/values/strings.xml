@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Movies</string>
+    <string name="action_info">Informazioni</string>
+    <string name="find_movie">Cerca film...</string>
+    <string name="find">Cerca</string>
+    <string name="title_activity_display_results">DisplayResultsActivity</string>
+    <string name="waiting_results">In attesa di risultati...</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

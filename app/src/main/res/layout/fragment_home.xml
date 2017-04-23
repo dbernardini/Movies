@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:isScrollContainer="false"
+    android:clipToPadding="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:showIn="@layout/activity_main"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/popular_movies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Film più popolari"/>
+
+            <Button
+                android:id="@+id/popular_movies_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/popular_scrollView"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:background="#0000"
+                android:text="MOSTRA TUTTI"/>
+
+            <HorizontalScrollView
+                android:id="@+id/popular_scrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/popular_movies">
+
+                <LinearLayout
+                    android:id="@+id/popular_movies_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="112dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/top_rated_movies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:text="Film più votati"/>
+
+            <Button
+                android:id="@+id/rated_movies_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/rated_scrollView"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:background="#0000"
+                android:layout_marginTop="10dp"
+                android:text="MOSTRA TUTTI"/>
+
+            <HorizontalScrollView
+                android:id="@+id/rated_scrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top_rated_movies">
+
+                <LinearLayout
+                    android:id="@+id/rated_movies_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="112dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/now_playing_movies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:text="Film al cinema (USA)"/>
+
+            <Button
+                android:id="@+id/playing_movies_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/playing_scrollView"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:background="#0000"
+                android:layout_marginTop="10dp"
+                android:text="MOSTRA TUTTI"/>
+
+            <HorizontalScrollView
+                android:id="@+id/playing_scrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/now_playing_movies">
+
+                <LinearLayout
+                    android:id="@+id/now_playing_movies_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="112dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/upcoming_movies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:text="Film in uscita (USA)"/>
+
+            <Button
+                android:id="@+id/upcoming_movies_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/upcoming_movies_scrollView"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:background="#0000"
+                android:layout_marginTop="10dp"
+                android:text="MOSTRA TUTTI"/>
+
+            <HorizontalScrollView
+                android:id="@+id/upcoming_movies_scrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/upcoming_movies">
+
+                <LinearLayout
+                    android:id="@+id/upcoming_movies_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="112dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="30dp"
+            android:background="#B6B6B6"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/popular_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:text="Serie Tv più popolari"/>
+
+            <Button
+                android:id="@+id/popular_tv_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:background="#0000"
+                android:text="MOSTRA TUTTE"
+                android:layout_alignTop="@+id/popular_tv"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignBottom="@+id/popular_tv" />
+
+            <HorizontalScrollView
+                android:id="@+id/popular_tv_scrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/popular_tv">
+
+                <LinearLayout
+                    android:id="@+id/popular_tv_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="112dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/top_rated_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:text="Serie Tv più votate"/>
+
+            <Button
+                android:id="@+id/rated_tv_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/rated_tv_scrollView"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:background="#0000"
+                android:layout_marginTop="10dp"
+                android:text="MOSTRA TUTTE"/>
+
+            <HorizontalScrollView
+                android:id="@+id/rated_tv_scrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top_rated_tv">
+
+                <LinearLayout
+                    android:id="@+id/rated_tv_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="112dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/upcoming_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:text="Serie Tv in arrivo (USA)"/>
+
+            <Button
+                android:id="@+id/upcoming_tv_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/upcoming_tv_scrollView"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:background="#0000"
+                android:layout_marginTop="10dp"
+                android:text="MOSTRA TUTTE"/>
+
+            <HorizontalScrollView
+                android:id="@+id/upcoming_tv_scrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upcoming_tv">
+
+                <LinearLayout
+                    android:id="@+id/upcoming_tv_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="112dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".activities.PersonActivity">
+
+            <ImageView
+                android:id="@+id/person_profile"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/person_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/person_profile"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/person_birthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/person_profile"
+                android:layout_below="@+id/person_name"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/person_deathday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/person_profile"
+                android:layout_below="@+id/person_birthday"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/person_place_birth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/person_profile"
+                android:layout_below="@+id/person_deathday"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="15dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".activities.MovieActivity">
+
+            <TextView
+                android:id="@+id/person_biography"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/movie_rating"
+                android:textSize="15dp"
+                android:ellipsize="end"
+                android:scrollbars="vertical" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
