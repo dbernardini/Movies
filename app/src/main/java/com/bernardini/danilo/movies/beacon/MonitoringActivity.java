@@ -76,11 +76,6 @@ public class MonitoringActivity extends Activity  {
         }
     }
 
-    public void onRangingClicked(View view) {
-//        Intent myIntent = new Intent(this, RangingActivity.class);
-//        this.startActivity(myIntent);
-    }
-
     @Override
     public void onResume() {
         super.onResume();
@@ -127,7 +122,6 @@ public class MonitoringActivity extends Activity  {
 
             });
             builder.show();
-
         }
 
     }

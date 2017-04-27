@@ -48,15 +48,17 @@ public class BeaconReferenceApplication extends Application implements Bootstrap
         //        setBeaconLayout("m:2-3=beac,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25"));
 
         Log.d(TAG, "setting up background monitoring for beacons and power saving");
-        // wake up the app when a beacon is seen
+
+        // Wake up the app when a beacon is seen
         Region region = new Region("backgroundRegion",
-                null, null, null);
-//        Identifier.parse("00000000-0000-0000-0000-000000000000"), null, null);
+                Identifier.parse("37fb8c06-8a13-f7ee-20c8-ab93f40d815a"),
+                null, null);
         regionBootstrap = new RegionBootstrap(this, region);
 
-        // simply constructing this class and holding a reference to it in your custom Application
-        // class will automatically cause the BeaconLibrary to save battery whenever the application
-        // is not visible.  This reduces bluetooth power usage by about 60%
+        // Simply constructing this class and holding a reference to it
+        // will automatically cause the BeaconLibrary to save battery
+        // whenever the application is not visible.
+        // This reduces bluetooth power usage by about 60%
         backgroundPowerSaver = new BackgroundPowerSaver(this);
 
         // If you wish to test beacon detection in the Android Emulator, you can use code like this:
@@ -66,35 +68,9 @@ public class BeaconReferenceApplication extends Application implements Bootstrap
 
     @Override
     public void didEnterRegion(Region arg0) {
-        // In this example, this class sends a notification to the user whenever a Beacon
-        // matching a Region (defined above) are first seen.
-        Log.d(TAG, "did enter region.");
-        if (!haveDetectedBeaconsSinceBoot) {
-            Log.d(TAG, "auto launching MainActivity");
-
-            // The very first time since boot that we detect an beacon, we launch the MonitoringActivity
-//            Intent intent = new Intent(this, MonitoringActivity.class);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            // Important:  make sure to add android:launchMode="singleInstance" in the manifest
-            // to keep multiple copies of this activity from getting created if the user has
-            // already manually launched the app.
-//            this.startActivity(intent);
-            sendNotification();
-            haveDetectedBeaconsSinceBoot = true;
-        } else {
-            if (monitoringActivity != null) {
-                // If the Monitoring Activity is visible, we log info about the beacons we have
-                // seen on its display
-                monitoringActivity.logToDisplay("I see a beacon again" );
-            } else {
-                // If we have already seen beacons before, but the monitoring activity is not in
-                // the foreground, we send a notification to the user on subsequent detections.
-                Log.d(TAG, "Sending notification.");
-                sendNotification();
-            }
-        }
-
-
+        // Send a notification to the user whenever a beacon
+        // matching the region is seen
+        sendNotification();
     }
 
     @Override
@@ -116,7 +92,7 @@ public class BeaconReferenceApplication extends Application implements Bootstrap
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this)
                         .setContentTitle("Movies beacon nearby!")
-                        .setContentText("Click to discover movies showtime")
+                        .setContentText("Click to discover movies showtimes")
                         .setSmallIcon(R.drawable.ic_stat);
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
